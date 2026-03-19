@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CAMEX – Programa de Mentoría 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #ffffff;
+  --navy2: #f0f4fc;
+  --gold: #8a6820;
+  --gold2: #a07828;
+  --red: #d63535;
+  --white: #0e1e42;
+  --muted: rgba(14,30,66,.45);
+  --border: rgba(14,30,66,.1);
+
+  --c-comex:    #1a56c4;
+  --c-mkt:      #c43030;
+  --c-excel:    #1a8a4a;
+  --c-admin:    #b07820;
+  --c-rrhh:     #7c35c4;
+  --c-finanzas: #0889b8;
+  --c-taller:   #4a5568;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #e8edf7;
+  font-family: 'DM Sans', sans-serif;
+  padding: 28px 20px;
+  min-height: 100vh;
+}
+
+/* ─── PAGE WRAPPER ─── */
+.page {
+  max-width: 1140px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(14,30,66,.1);
+  box-shadow:
+    0 0 0 1px rgba(14,30,66,.04),
+    0 32px 80px rgba(14,30,66,.12),
+    0 4px 16px rgba(14,30,66,.06);
+}
+
+/* ─── HERO HEADER ─── */
+.hero {
+  background: #ffffff;
+  padding: 36px 52px 32px;
+  border-bottom: 1px solid rgba(14,30,66,.08);
+  position: relative;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 52px;
+  width: 56px;
+  height: 2px;
+  background: #E8352B;
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.logo-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.logo-eyebrow {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(14,30,66,.4);
+  margin-bottom: 10px;
+}
+.logotype {
+  font-family: 'DM Serif Display', serif;
+  font-size: 72px;
+  line-height: .88;
+  color: #0B2A72;
+  letter-spacing: -2px;
+}
+.logotype em {
+  font-style: normal;
+  color: #E8352B;
+}
+.logo-rule {
+  width: 32px;
+  height: 1px;
+  background: rgba(14,30,66,.15);
+  margin: 16px 0 12px;
+}
+.logo-sub {
+  font-size: 10px;
+  font-weight: 500;
+  color: rgba(14,30,66,.45);
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.hero-right {
+  text-align: right;
+  flex-shrink: 0;
+}
+.hero-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 28px;
+  color: #0B2A72;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+.hero-sub {
+  font-size: 10.5px;
+  color: rgba(14,30,66,.45);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.hero-pills {
+  display: flex;
+  gap: 6px;
+  justify-content: flex-end;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+.hero-pill {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 11px;
+  border: 1px solid rgba(14,30,66,.15);
+  border-radius: 2px;
+  color: rgba(14,30,66,.55);
+  background: transparent;
+}
+.hero-pill.accent {
+  border-color: #E8352B;
+  color: #E8352B;
+  background: rgba(232,53,43,.04);
+}
+
+/* ─── LEGEND BAR ─── */
+.legend {
+  background: #f7f9fd;
+  border-bottom: 1px solid rgba(14,30,66,.08);
+  padding: 10px 52px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+.leg-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(14,30,66,.35);
+  margin-right: 12px;
+}
+.leg-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10.5px;
+  color: rgba(14,30,66,.55);
+  font-weight: 400;
+  margin-right: 10px;
+}
+.leg-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 1px;
+  flex-shrink: 0;
+}
+
+/* ─── BODY ─── */
+.body { padding: 36px 52px 48px; display: flex; flex-direction: column; gap: 40px; background: #ffffff; }
+
+/* ─── MONTH SECTION ─── */
+.month-hdr {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+.month-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 11px;
+  font-style: italic;
+  color: #8a6820;
+  opacity: .8;
+  width: 28px;
+}
+.month-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  color: #0e1e42;
+  letter-spacing: .5px;
+}
+.month-hr {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, rgba(14,30,66,.15), transparent);
+}
+.month-range {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(14,30,66,.35);
+}
+
+/* ─── WEEK ─── */
+.week { display: flex; flex-direction: column; gap: 5px; }
+.week + .week { margin-top: 10px; }
+
+.week-hdr {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4px;
+  margin-bottom: 2px;
+}
+.wh {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(14,30,66,.3);
+  text-align: center;
+  padding: 0 4px;
+}
+
+.week-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4px;
+}
+
+/* ─── DAY CARD ─── */
+.day {
+  background: #f7f9fd;
+  border: 1px solid rgba(14,30,66,.08);
+  border-radius: 3px;
+  padding: 10px 10px 10px;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: border-color .2s;
+}
+.day:hover { border-color: rgba(14,30,66,.2); }
+.day.empty { background: transparent; border-color: transparent; pointer-events: none; }
+
+.day-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px;
+  color: #0e1e42;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.day-wd {
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(14,30,66,.3);
+  margin-bottom: 6px;
+}
+
+/* ─── EVENT ─── */
+.ev {
+  display: flex;
+  flex-direction: column;
+  padding: 4px 7px;
+  border-radius: 2px;
+  gap: 1px;
+  border-left: 2px solid;
+}
+.ev-time {
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: .7;
+}
+.ev-name {
+  font-size: 9.5px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #1a2a4a;
+}
+
+.ev.comex    { background: #e8f0ff; border-color: #3a70e0; }
+.ev.mkt      { background: #ffe8e8; border-color: #e05050; }
+.ev.excel    { background: #e4f7ec; border-color: #2ab860; }
+.ev.admin    { background: #fef4e0; border-color: #d4a040; }
+.ev.rrhh     { background: #f2e8ff; border-color: #a060e0; }
+.ev.finanzas { background: #e0f5ff; border-color: #30b0e0; }
+.ev.taller   { background: rgba(14,30,66,.04); border-color: rgba(14,30,66,.18); }
+
+.ev.comex    .ev-time { color: #1a4cb8; }
+.ev.mkt      .ev-time { color: #b02020; }
+.ev.excel    .ev-time { color: #0d7a38; }
+.ev.admin    .ev-time { color: #8a5800; }
+.ev.rrhh     .ev-time { color: #6820b8; }
+.ev.finanzas .ev-time { color: #0070a8; }
+.ev.taller   .ev-time { color: rgba(14,30,66,.4); }
+
+/* ─── MONTH SEPARATOR ─── */
+.month-sep {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(14,30,66,.1) 30%, rgba(14,30,66,.1) 70%, transparent);
+}
+
+/* ─── FOOTER ─── */
+.footer {
+  background: #0c2460;
+  border-top: 1px solid rgba(201,168,76,.2);
+  padding: 16px 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer p {
+  font-size: 11px;
+  color: rgba(255,255,255,.4);
+  letter-spacing: .5px;
+}
+.footer strong { color: rgba(255,255,255,.7); }
+.footer-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(201,168,76,.8);
+}
+.footer-badge::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: rgba(201,168,76,.6);
+}
+
+/* ─── CERT BADGE ─── */
+.ev-cert {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  margin-top: 3px;
+  padding: 2px 5px;
+  border-radius: 2px;
+  background: rgba(201,168,76,.15);
+  color: #8a6820;
+  border: 1px solid rgba(201,168,76,.3);
+  align-self: flex-start;
+}
+.ev-cert::before {
+  content: '★';
+  font-size: 7px;
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="logo-block">
+        <div class="logo-eyebrow">Educación Ejecutiva</div>
+        <div class="logotype">CAM<em>EX</em></div>
+        <div class="logo-rule"></div>
+        <div class="logo-sub">Primera Escuela de Negocios con IA</div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-title">Programa de<br>Mentoría 2026</div>
+        <div class="hero-sub">Abril · Mayo · Junio · Julio · Agosto</div>
+        <div class="hero-pills">
+          <div class="hero-pill">Online en Vivo</div>
+          <div class="hero-pill accent">+200 Cursos</div>
+          <div class="hero-pill">Lun – Vie</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEGEND -->
+  <div class="legend">
+    <span class="leg-label">Áreas</span>
+    <div class="leg-item"><span class="leg-dot" style="background:#3a70e0"></span>Comercio Exterior</div>
+    <div class="leg-item"><span class="leg-dot" style="background:#e05050"></span>Marketing</div>
+    <div class="leg-item"><span class="leg-dot" style="background:#2ab860"></span>Excel / Power BI</div>
+    <div class="leg-item"><span class="leg-dot" style="background:#d4a040"></span>Administración</div>
+    <div class="leg-item"><span class="leg-dot" style="background:#a060e0"></span>RRHH</div>
+    <div class="leg-item"><span class="leg-dot" style="background:#30b0e0"></span>Finanzas</div>
+    <div class="leg-item"><span class="leg-dot" style="background:rgba(245,242,235,.25)"></span>Taller práctico</div>
+  </div>
+
+  <div class="body">
+
+  <!-- ════════ ABRIL ════════ -->
+  <div>
+    <div class="month-hdr">
+      <span class="month-num">01</span>
+      <span class="month-name">Abril</span>
+      <div class="month-hr"></div>
+      <span class="month-range">6 – 30 Abr</span>
+    </div>
+
+    <!-- Semana 1 -->
+    <div class="week">
+      <div class="week-hdr"><div class="wh">Lunes</div><div class="wh">Martes</div><div class="wh">Miércoles</div><div class="wh">Jueves</div><div class="wh">Viernes</div></div>
+      <div class="week-row">
+        <div class="day">
+          <div class="day-wd">Lun</div><div class="day-num">6</div>
+          <div class="ev comex"><span class="ev-time">10:00</span><span class="ev-name">Creación de Startups</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev comex"><span class="ev-time">14:00</span><span class="ev-name">Gestión Estrategia de Exportaciones</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Reclutamiento y Selección Laboral</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mar</div><div class="day-num">7</div>
+          <div class="ev mkt"><span class="ev-time">10:00</span><span class="ev-name">WordPress para Negocios</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev mkt"><span class="ev-time">15:00</span><span class="ev-name">Oratoria</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Agroexportación Café</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mié</div><div class="day-num">8</div>
+          <div class="ev excel"><span class="ev-time">18:00</span><span class="ev-name">Base de datos en Excel</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Campañas de Retargeting</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Jue</div><div class="day-num">9</div>
+          <div class="ev comex"><span class="ev-time">10:00</span><span class="ev-name">Organización y Constitución de Empresa</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev comex"><span class="ev-time">18:00</span><span class="ev-name">Costos de Importación · Plantillas</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Búsqueda de Clientes Internacionales</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Vie</div><div class="day-num">10</div>
+          <div class="ev excel"><span class="ev-time">10:00</span><span class="ev-name">Excel Empresarial</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Tele-Marketing Internacional</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-row">
+        <div class="day">
+          <div class="day-wd">Lun</div><div class="day-num">13</div>
+          <div class="ev mkt"><span class="ev-time">10:00</span><span class="ev-name">TikTok, Instagram & LinkedIn Ads</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Liderazgo y Toma de Decisiones</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mar</div><div class="day-num">14</div>
+          <div class="ev admin"><span class="ev-time">14:00</span><span class="ev-name">Gestión de Equipos Virtuales</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Agroexportación Banano</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mié</div><div class="day-num">15</div>
+          <div class="ev admin"><span class="ev-time">14:00</span><span class="ev-name">Invirtiendo en una Startup</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev comex"><span class="ev-time">18:00</span><span class="ev-name">Seguros de Importación</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Segmenta tu Público</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Jue</div><div class="day-num">16</div>
+          <div class="ev excel"><span class="ev-time">14:00</span><span class="ev-name">Excel Financiero</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev excel"><span class="ev-time">18:00</span><span class="ev-name">Funciones Matriciales</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Impuestos Importación · Desaduanamiento</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Vie</div><div class="day-num">17</div>
+          <div class="ev comex"><span class="ev-time">11:00</span><span class="ev-name">Valoración Aduanera y Arancelaria</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev excel"><span class="ev-time">17:00</span><span class="ev-name">Análisis de Información Excel</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Informes de Tendencias de Productos</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-row">
+        <div class="day">
+          <div class="day-wd">Lun</div><div class="day-num">20</div>
+          <div class="ev mkt"><span class="ev-time">15:00</span><span class="ev-name">Diseño UX|UI para Marketing Digital</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Cultura Organizacional</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mar</div><div class="day-num">21</div>
+          <div class="ev admin"><span class="ev-time">11:00</span><span class="ev-name">Certificaciones Internacionales</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev mkt"><span class="ev-time">15:00</span><span class="ev-name">Habilidades para el Empleo</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Agroexportación Quinua</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mié</div><div class="day-num">22</div>
+          <div class="ev comex"><span class="ev-time">18:00</span><span class="ev-name">Contratación Global y Acuerdos Comerciales</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Vende tus Productos en Facebook</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Jue</div><div class="day-num">23</div>
+          <div class="ev comex"><span class="ev-time">10:00</span><span class="ev-name">Franquicias</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev excel"><span class="ev-time">18:00</span><span class="ev-name">Fórmulas Matriciales (ejercicios)</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Importación por Alibaba</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Vie</div><div class="day-num">24</div>
+          <div class="ev admin"><span class="ev-time">14:00</span><span class="ev-name">Dashboard</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Cierre de Ventas y Postventa</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-row">
+        <div class="day">
+          <div class="day-wd">Lun</div><div class="day-num">27</div>
+          <div class="ev mkt"><span class="ev-time">15:00</span><span class="ev-name">Tamaño de Mercado para Producto</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Desarrollo y Evaluación del Personal</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mar</div><div class="day-num">28</div>
+          <div class="ev admin"><span class="ev-time">10:00</span><span class="ev-name">Canvas</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Agroexportación Arándanos</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mié</div><div class="day-num">29</div>
+          <div class="ev comex"><span class="ev-time">18:00</span><span class="ev-name">Gestión Calidad · Comercio Internacional</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">¿Cómo Vender por Instagram?</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Jue</div><div class="day-num">30</div>
+          <div class="ev comex"><span class="ev-time">11:00</span><span class="ev-name">Envases y Embalajes</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev excel"><span class="ev-time">18:00</span><span class="ev-name">Funciones Financieras Excel</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Importación carga marítima</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Vie</div><div class="day-num">31</div>
+          <div class="ev excel"><span class="ev-time">14:00</span><span class="ev-name">Excel de Producción</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Cumplimiento de Contratos · Conflictos</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="month-sep"></div>
+
+  <!-- ════════ MAYO ════════ -->
+  <div>
+    <div class="month-hdr">
+      <span class="month-num">02</span>
+      <span class="month-name">Mayo</span>
+      <div class="month-hr"></div>
+      <span class="month-range">4 – 29 May</span>
+    </div>
+
+    <div class="week">
+      <div class="week-hdr"><div class="wh">Lunes</div><div class="wh">Martes</div><div class="wh">Miércoles</div><div class="wh">Jueves</div><div class="wh">Viernes</div></div>
+      <div class="week-row">
+        <div class="day">
+          <div class="day-wd">Lun</div><div class="day-num">4</div>
+          <div class="ev comex"><span class="ev-time">14:00</span><span class="ev-name">Gestión de Aduanas</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Salud Ocupacional y Riesgos Covid-19</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mar</div><div class="day-num">5</div>
+          <div class="ev mkt"><span class="ev-time">11:00</span><span class="ev-name">Marketing Aplicado</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Agroexportación Palta</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mié</div><div class="day-num">6</div>
+          <div class="ev admin"><span class="ev-time">14:00</span><span class="ev-name">Gestión del Proceso Administrativo</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Análisis de Hipótesis en Excel</span></div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Campañas en Facebook Ads</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Jue</div><div class="day-num">7</div>
+          <div class="ev admin"><span class="ev-time">15:00</span><span class="ev-name">Competencias Gerenciales</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Importación carga aérea</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Vie</div><div class="day-num">8</div>
+          <div class="ev excel"><span class="ev-time">10:00</span><span class="ev-name">Excel MYPES</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Coaching en Negociación Internacional</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-row">
+        <div class="day">
+          <div class="day-wd">Lun</div><div class="day-num">11</div>
+          <div class="ev mkt"><span class="ev-time">15:00</span><span class="ev-name">Neuromarketing</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Gestión de Conflictos y Negociación</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mar</div><div class="day-num">12</div>
+          <div class="ev comex"><span class="ev-time">10:00</span><span class="ev-name">Gestión Transporte Terrestre</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Agroexportación Mango</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mié</div><div class="day-num">13</div>
+          <div class="ev admin"><span class="ev-time">14:00</span><span class="ev-name">Gestión de Empresas de Servicio</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Tabla de Datos Excel</span></div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Contenido de Calidad en Instagram</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Jue</div><div class="day-num">14</div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Importación artículos de cocina</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Vie</div><div class="day-num">15</div>
+          <div class="ev excel"><span class="ev-time">14:00</span><span class="ev-name">Herramientas Excel Empresarial</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Medios de Pago Internacionales</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-row">
+        <div class="day">
+          <div class="day-wd">Lun</div><div class="day-num">18</div>
+          <div class="ev mkt"><span class="ev-time">15:00</span><span class="ev-name">Redacción de Textos de Marketing</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Legislación Laboral</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mar</div><div class="day-num">19</div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Agroexportación Jengibre</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mié</div><div class="day-num">20</div>
+          <div class="ev admin"><span class="ev-time">11:00</span><span class="ev-name">Gestión Cultura Organizacional</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev admin"><span class="ev-time">14:00</span><span class="ev-name">Marketing Internacional</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Automatizar Tareas Excel</span></div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Marketing de Contenidos</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Jue</div><div class="day-num">21</div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Contratos Internacionales</span></div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Importación artículos de cocina</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Vie</div><div class="day-num">22</div>
+          <div class="ev excel"><span class="ev-time">14:00</span><span class="ev-name">Hojas de Cálculo</span><span class="ev-cert">Certificable</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-row">
+        <div class="day">
+          <div class="day-wd">Lun</div><div class="day-num">25</div>
+          <div class="ev admin"><span class="ev-time">13:00</span><span class="ev-name">Programación Neurolingüística</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Boleta de Remuneración de Pago</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mar</div><div class="day-num">26</div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Agroexportación Cacao</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mié</div><div class="day-num">27</div>
+          <div class="ev admin"><span class="ev-time">10:00</span><span class="ev-name">Registrar Empresa en EEUU</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev admin"><span class="ev-time">14:00</span><span class="ev-name">OKR's</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Funciones VBA en Excel</span></div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Campañas RRSS B2C</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Jue</div><div class="day-num">28</div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Verificación de Riesgo Comercial</span></div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Importación cosméticos</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Vie</div><div class="day-num">29</div>
+          <div class="ev admin"><span class="ev-time">12:00</span><span class="ev-name">Conseguir un Ascenso</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev excel"><span class="ev-time">14:00</span><span class="ev-name">KPI's y Power Pivot</span><span class="ev-cert">Certificable</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="month-sep"></div>
+
+  <!-- ════════ JUNIO ════════ -->
+  <div>
+    <div class="month-hdr">
+      <span class="month-num">03</span>
+      <span class="month-name">Junio</span>
+      <div class="month-hr"></div>
+      <span class="month-range">1 – 26 Jun</span>
+    </div>
+
+    <div class="week">
+      <div class="week-hdr"><div class="wh">Lunes</div><div class="wh">Martes</div><div class="wh">Miércoles</div><div class="wh">Jueves</div><div class="wh">Viernes</div></div>
+      <div class="week-row">
+        <div class="day">
+          <div class="day-wd">Lun</div><div class="day-num">1</div>
+          <div class="ev finanzas"><span class="ev-time">10:00</span><span class="ev-name">Administración de Banca y Seguros</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev rrhh"><span class="ev-time">18:00</span><span class="ev-name">CTS, Vacaciones, Gratificaciones</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Algoritmos en Facebook Ads</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mar</div><div class="day-num">2</div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Contrato Compra-Venta (llenado)</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mié</div><div class="day-num">3</div>
+          <div class="ev mkt"><span class="ev-time">11:00</span><span class="ev-name">Instagram para Negocios</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Dashboard Tablas Dinámicas</span></div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Importación de Carteras</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Jue</div><div class="day-num">4</div>
+          <div class="ev comex"><span class="ev-time">15:00</span><span class="ev-name">Regímenes Aduaneros</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Gestión de Compras</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Vie</div><div class="day-num">5</div>
+          <div class="ev excel"><span class="ev-time">14:00</span><span class="ev-name">Macros Excel</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Intro Investigación de Mercados</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-row">
+        <div class="day">
+          <div class="day-wd">Lun</div><div class="day-num">8</div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Subsidios, AFP, ONP, 5ta Categoría</span></div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Funnel de Venta y Audiencias</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mar</div><div class="day-num">9</div>
+          <div class="ev admin"><span class="ev-time">12:00</span><span class="ev-name">Conseguir un Ascenso</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Cotización Comercial y Factura Proforma</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mié</div><div class="day-num">10</div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Distribución de Almacenes</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Jue</div><div class="day-num">11</div>
+          <div class="ev finanzas"><span class="ev-time">10:00</span><span class="ev-name">Administración Financiera Caso Práctico</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Dashboard con Gráficos Dinámicos</span></div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Importación de Pijamas</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Vie</div><div class="day-num">12</div>
+          <div class="ev excel"><span class="ev-time">14:00</span><span class="ev-name">Power BI Básico</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Estructura de Investigación de Mercados</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-row">
+        <div class="day">
+          <div class="day-wd">Lun</div><div class="day-num">15</div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">T-Registro</span></div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Inversión Publicitaria (caso)</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mar</div><div class="day-num">16</div>
+          <div class="ev admin"><span class="ev-time">14:00</span><span class="ev-name">Desgaste Profesional</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Guía de Remisión (llenado)</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mié</div><div class="day-num">17</div>
+          <div class="ev finanzas"><span class="ev-time">14:00</span><span class="ev-name">Estados Financieros (análisis)</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Ineficiencias en Gestión de Almacenes</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Jue</div><div class="day-num">18</div>
+          <div class="ev comex"><span class="ev-time">10:00</span><span class="ev-name">Drawback</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Dashboard Segmentadores y Línea de Tiempo</span></div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Importación Motos Eléctricas</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Vie</div><div class="day-num">19</div>
+          <div class="ev excel"><span class="ev-time">15:00</span><span class="ev-name">Power BI Intermedio</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Diseños de Investigación</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-row">
+        <div class="day">
+          <div class="day-wd">Lun</div><div class="day-num">22</div>
+          <div class="ev finanzas"><span class="ev-time">14:00</span><span class="ev-name">Análisis de Riesgo Crediticio</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Gestión de Presupuesto de Planillas</span></div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Business Manager (creación de cuenta)</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mar</div><div class="day-num">23</div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Instrucciones de Embarque</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mié</div><div class="day-num">24</div>
+          <div class="ev admin"><span class="ev-time">10:00</span><span class="ev-name">Comercio Electrónico para MYPES</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Manipulación de Inventarios (picking)</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Jue</div><div class="day-num">25</div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Dashboard con Reportes Detallados</span></div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Importación de Juguetes</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Vie</div><div class="day-num">26</div>
+          <div class="ev excel"><span class="ev-time">15:00</span><span class="ev-name">Power BI Avanzado</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Investigación Cualitativa: Métodos Directos</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="month-sep"></div>
+
+  <!-- ════════ JULIO ════════ -->
+  <div>
+    <div class="month-hdr">
+      <span class="month-num">04</span>
+      <span class="month-name">Julio</span>
+      <div class="month-hr"></div>
+      <span class="month-range">6 – 31 Jul</span>
+    </div>
+
+    <div class="week">
+      <div class="week-hdr"><div class="wh">Lunes</div><div class="wh">Martes</div><div class="wh">Miércoles</div><div class="wh">Jueves</div><div class="wh">Viernes</div></div>
+      <div class="week-row">
+        <div class="day">
+          <div class="day-wd">Lun</div><div class="day-num">6</div>
+          <div class="ev admin"><span class="ev-time">10:00</span><span class="ev-name">Gestión Pública</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">PDTPLAME: Instalación y Registros</span></div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Públicos Guardados y Similares (Facebook)</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mar</div><div class="day-num">7</div>
+          <div class="ev finanzas"><span class="ev-time">14:00</span><span class="ev-name">Operaciones de Caja Bancarias</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Llenado DAM Formato A, B y C</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mié</div><div class="day-num">8</div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Modelamiento avanzado Power BI</span></div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Importación Consola de Juego Portátil</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Jue</div><div class="day-num">9</div>
+          <div class="ev mkt"><span class="ev-time">10:00</span><span class="ev-name">Administración de Páginas Web</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Logística inversa y outsourcing</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Vie</div><div class="day-num">10</div>
+          <div class="ev excel"><span class="ev-time">15:00</span><span class="ev-name">Power BI · Inteligencia de Negocios</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Investigación Cualitativa: Métodos Indirectos</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-row">
+        <div class="day">
+          <div class="day-wd">Lun</div><div class="day-num">13</div>
+          <div class="ev excel"><span class="ev-time">10:00</span><span class="ev-name">Indicadores y BD para Operadores Logísticos</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev finanzas"><span class="ev-time">14:00</span><span class="ev-name">Flujo de Caja</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">PDTPLAME: Subsidios, Liquidación y CTS</span></div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Vinculando el Píxel y Eventos</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mar</div><div class="day-num">14</div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Llenado Bill of Lading – BL</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mié</div><div class="day-num">15</div>
+          <div class="ev mkt"><span class="ev-time">14:00</span><span class="ev-name">Google Analytics</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Relación de tablas y fórmulas DAX</span></div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Regímenes Aduaneros Vigentes</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Jue</div><div class="day-num">16</div>
+          <div class="ev admin"><span class="ev-time">10:00</span><span class="ev-name">Licitaciones</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Ciclo de vida del producto y competencia</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Vie</div><div class="day-num">17</div>
+          <div class="ev excel"><span class="ev-time">15:00</span><span class="ev-name">Power Query Básico</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Técnica de Muestreos</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-row">
+        <div class="day">
+          <div class="day-wd">Lun</div><div class="day-num">20</div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">AFP NET</span></div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Estructura Campañas Facebook Ads</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mar</div><div class="day-num">21</div>
+          <div class="ev finanzas"><span class="ev-time">10:00</span><span class="ev-name">Cajero Comercial</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Exportación marítima con documentos</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mié</div><div class="day-num">22</div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Dashboard Tablas y Segmentadores</span></div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Tributación Aduanera (cálculo)</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Jue</div><div class="day-num">23</div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Envases y Embalajes en cadena de suministro</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Vie</div><div class="day-num">24</div>
+          <div class="ev excel"><span class="ev-time">15:00</span><span class="ev-name">SQL Express</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Formas de Entrada Internacionales</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-row">
+        <div class="day">
+          <div class="day-wd">Lun</div><div class="day-num">27</div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">AFP NET (avanzado)</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mar</div><div class="day-num">28</div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Exportación aérea con documentos</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mié</div><div class="day-num">29</div>
+          <div class="ev admin"><span class="ev-time">14:00</span><span class="ev-name">Gestión Comercial de Agencia</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Dashboard con Google Data Studio</span></div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Preferencias Arancelarias</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Jue</div><div class="day-num">30</div>
+          <div class="ev comex"><span class="ev-time">10:00</span><span class="ev-name">Inteligencia Comercial</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Trazabilidad e indicadores logísticos</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Vie</div><div class="day-num">31</div>
+          <div class="ev excel"><span class="ev-time">15:00</span><span class="ev-name">BSC con Excel · Tablero de Indicadores</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Interpretación de datos</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="month-sep"></div>
+
+  <!-- ════════ AGOSTO ════════ -->
+  <div>
+    <div class="month-hdr">
+      <span class="month-num">05</span>
+      <span class="month-name">Agosto</span>
+      <div class="month-hr"></div>
+      <span class="month-range">4 – 28 Ago</span>
+    </div>
+
+    <div class="week">
+      <div class="week-hdr"><div class="wh">Lunes</div><div class="wh">Martes</div><div class="wh">Miércoles</div><div class="wh">Jueves</div><div class="wh">Viernes</div></div>
+      <div class="week-row">
+        <div class="day empty"></div>
+        <div class="day">
+          <div class="day-wd">Mar</div><div class="day-num">4</div>
+          <div class="ev comex"><span class="ev-time">10:00</span><span class="ev-name">Legislación y Técnica Aduanera</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Exportación aérea con documentos</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mié</div><div class="day-num">5</div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Excel: Funciones Básicas (inicio)</span></div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Revisión documentaria DAM</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Jue</div><div class="day-num">6</div>
+          <div class="ev finanzas"><span class="ev-time">14:00</span><span class="ev-name">Gestión Integral de Riesgos Financieros</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Selección de Operadores Logísticos</span></div>
+        </div>
+        <div class="day empty"></div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-row">
+        <div class="day">
+          <div class="day-wd">Lun</div><div class="day-num">10</div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Diseño Campaña Búsqueda y Display</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mar</div><div class="day-num">11</div>
+          <div class="ev finanzas"><span class="ev-time">10:00</span><span class="ev-name">Ahorro de Dinero</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Operadores Logísticos (evaluación)</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mié</div><div class="day-num">12</div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Introducción a Tablas en Excel</span></div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Liquidación DAMs · Regímenes importación</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Jue</div><div class="day-num">13</div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Documentación Aduanera para Operadores</span></div>
+        </div>
+        <div class="day empty"></div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-row">
+        <div class="day">
+          <div class="day-wd">Lun</div><div class="day-num">17</div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Optimización de Campañas y Palabras Clave</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mar</div><div class="day-num">18</div>
+          <div class="ev mkt"><span class="ev-time">14:00</span><span class="ev-name">Growth Hacking Marketing</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Tipos de contenedores marítimos y aéreos</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mié</div><div class="day-num">19</div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Funciones Lógicas y de Texto Excel</span></div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Liquidación DAMs bajo regímenes</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Jue</div><div class="day-num">20</div>
+          <div class="ev finanzas"><span class="ev-time">10:00</span><span class="ev-name">Productos Bancarios Activos y Pasivos</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Empaques para logística de contenedores</span></div>
+        </div>
+        <div class="day empty"></div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-row">
+        <div class="day">
+          <div class="day-wd">Lun</div><div class="day-num">24</div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Diseño Campañas de Video (YouTube ADS)</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mar</div><div class="day-num">25</div>
+          <div class="ev finanzas"><span class="ev-time">14:00</span><span class="ev-name">Agente Financiero</span><span class="ev-cert">Certificable</span></div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Incoterms en logística de contenedores</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Mié</div><div class="day-num">26</div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Funciones de Búsqueda · Productividad Excel</span></div>
+          <div class="ev taller"><span class="ev-time">20:00</span><span class="ev-name">Liquidación DAMs Envíos Entrega Rápida</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Jue</div><div class="day-num">27</div>
+          <div class="ev taller"><span class="ev-time">19:00</span><span class="ev-name">Análisis Volúmenes, Pesos y Cubicación</span></div>
+        </div>
+        <div class="day">
+          <div class="day-wd">Vie</div><div class="day-num">28</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div><!-- /body -->
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>© 2026 <strong>CAMEX</strong> — Primera Escuela de Negocios con Inteligencia Artificial</p>
+    <div class="footer-badge">www.camex.edu.pe</div>
+  </div>
+
+</div>
+</body>
+</html>
